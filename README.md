@@ -2,6 +2,9 @@
 
 A premium, glassmorphic web application for students to exchange skills, book mentorship sessions, and chat.
 
+**Live Demo:** [https://student-skill-exchange-platform-mu.vercel.app](https://student-skill-exchange-platform-mu.vercel.app)
+
+
 ## Features
 - **Smart Matching**: AI-driven skill matching using cosine similarity.
 - **Premium UI**: Modern dark mesh-gradient background with glassmorphic components.
