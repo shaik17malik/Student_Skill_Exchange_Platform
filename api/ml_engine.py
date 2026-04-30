@@ -1,13 +1,14 @@
-import pandas as pd
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
+# Heavy imports moved inside functions to improve Vercel startup stability
 
 def get_skill_matching(user_id):
     """
     Skill Matching Engine — Cosine Similarity on TF-IDF skill vectors.
     Finds users whose skills_have match the current user's skills_want.
     """
-    # Lazy import to avoid circular imports
+    # Lazy import to avoid circular imports and reduce startup overhead
+    import pandas as pd
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from sklearn.metrics.pairwise import cosine_similarity
     from .models import Profile, Review
     from django.db.models import Avg
 
@@ -72,6 +73,7 @@ def get_trending_skills():
     Skill Demand Prediction: aggregate the most frequently 'wanted' skills
     across all users using Pandas.
     """
+    import pandas as pd
     from .models import Profile
 
     all_wants = []
@@ -94,6 +96,7 @@ def rank_mentors():
     points and average rating using Pandas.
     Formula: score = (points * 0.4) + (avg_rating * 20 * 0.6)
     """
+    import pandas as pd
     from .models import Profile, Review
     from django.db.models import Avg
 
