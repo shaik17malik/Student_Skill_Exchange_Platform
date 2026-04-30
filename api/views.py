@@ -183,7 +183,11 @@ def get_matches(request):
     return Response(matches)
 
 
+from rest_framework.permissions import AllowAny
+from rest_framework.decorators import permission_classes
+
 @api_view(['GET'])
+@permission_classes([AllowAny])
 def trending_skills(request):
     """Return top trending skills across the platform based on demand."""
     trends = get_trending_skills()
@@ -191,6 +195,7 @@ def trending_skills(request):
 
 
 @api_view(['GET'])
+@permission_classes([AllowAny])
 def top_mentors(request):
     """Return ranked mentors using ML (points + rating)."""
     mentors = rank_mentors()
