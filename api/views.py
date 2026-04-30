@@ -7,6 +7,11 @@ from django.db.models import Q, Avg
 from .models import User, Profile, ChatMessage, ChatRequest, Session, Review
 from .serializers import UserSerializer, ProfileSerializer, ChatMessageSerializer, SessionSerializer, ReviewSerializer
 from .ml_engine import get_skill_matching, get_trending_skills, rank_mentors
+from django.shortcuts import render
+
+def home(request):
+    """Serve the frontend index.html."""
+    return render(request, 'index.html')
 
 @api_view(['POST'])
 @parser_classes([MultiPartParser, FormParser])

@@ -2,9 +2,9 @@
   "version": 2,
   "builds": [
     {
-      "src": "backend/wsgi.py",
+      "src": "api/index.py",
       "use": "@vercel/python",
-      "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+      "config": { "runtime": "python3.10" }
     },
     {
       "src": "index.html",
@@ -18,7 +18,7 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "backend/wsgi.py"
+      "dest": "api/index.py"
     },
     {
       "src": "/app.js",
