@@ -52,7 +52,10 @@ const Input = ({ type='text', placeholder, value, onChange, className='' }) => (
 // ─── APP ROOT ────────────────────────────────────────────────────────────────
 
 const App = () => {
-    const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')) || null);
+    const [user, setUser] = useState(() => {
+        try { return JSON.parse(localStorage.getItem('user')) || null; }
+        catch { return null; }
+    });
     const [currentPage, setCurrentPage] = useState(user ? 'dashboard' : 'login');
     const [toast, setToast] = useState(null);
 

@@ -21,9 +21,13 @@ from django.conf.urls.static import static
 
 from api import views as api_views
 
+from django.views.static import serve
+import os
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
+    path('app.js', serve, {'document_root': settings.BASE_DIR, 'path': 'app.js'}),
     path('', api_views.home, name='home'),
 ]
 
