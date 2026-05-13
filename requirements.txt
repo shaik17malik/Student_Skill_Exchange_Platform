@@ -3,3 +3,6 @@ djangorestframework
 django-cors-headers
 whitenoise
 gunicorn
+pysqlite3-binary
+asgiref
+sqlparse

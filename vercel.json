@@ -3,8 +3,7 @@
   "builds": [
     {
       "src": "index.py",
-      "use": "@vercel/python",
-      "config": { "runtime": "python3.10" }
+      "use": "@vercel/python"
     },
     {
       "src": "index.html",
@@ -22,11 +21,11 @@
     },
     {
       "src": "/app.js",
-      "dest": "/app.js"
+      "dest": "app.js"
     },
     {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "index.html"
     }
   ]
 }
